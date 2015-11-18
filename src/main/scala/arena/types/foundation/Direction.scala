@@ -1,7 +1,8 @@
 package arena.types.foundation
 
 /**
- * Created by bbhudia on 18/11/2015.
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ *         18/11/2015 13:35
  */
 object Direction extends Enumeration {
   type Direction = Value
