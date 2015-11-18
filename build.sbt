@@ -16,6 +16,7 @@ lazy val root = (project in file(".")).
       "org.scala-lang.modules" %% "scala-async" % "0.9.5",
       "org.scala-lang.modules" %% "scala-java8-compat" % "0.7.0",
       "org.scala-lang" %% "scala-actors-migration" % "1.1.0",
+      "org.scalatest" %% "scalatest" % "2.2.5" % Test,
       "com.typesafe.akka" %% "akka-actor" % "2.4.0",
       "com.typesafe.akka" %% "akka-testkit" % "2.4.0" % Test,
       "org.scalanlp" %% "breeze" % "0.11.2",
