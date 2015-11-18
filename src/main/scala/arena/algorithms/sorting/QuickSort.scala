@@ -6,7 +6,9 @@ package arena.algorithms.sorting
  */
 class QuickSort extends Sortable {
   def sort(nums: Array[Int]) {
-    quickSort(nums, 0, nums.length - 1)
+    if (nums.length > 1) {
+      quickSort(nums, 0, nums.length - 1)
+    }
   }
 
   private def quickSort(nums: Array[Int], lower: Int, upper: Int) {
