@@ -2,8 +2,8 @@ package arena.types.transaction
 
 import java.time.LocalDate
 
-import arena.types.foundation.BuySell
-import arena.types.foundation.Currency.Currency
+import arena.types.foundation.BuySell._
+import arena.types.foundation.Currency._
 
 /**
  * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>

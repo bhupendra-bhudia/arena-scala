@@ -4,9 +4,13 @@ package arena.types.foundation
  * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
  *         18/11/2015 16:35
  */
-object BuySell extends Enum[BuySell]
-sealed trait BuySell extends BuySell.Value
+object BuySell extends Enumeration {
+  type BuySell = Value
+  val BUY = BuySellVal(1)
+  val SELL = BuySellVal(-1)
 
-case object BUY extends BuySell
-case object SELL extends BuySell
+  protected case class BuySellVal(sign: Int) extends super.Val()
+
+  implicit def convert(value: Value) = value.asInstanceOf[BuySellVal]
+}
 

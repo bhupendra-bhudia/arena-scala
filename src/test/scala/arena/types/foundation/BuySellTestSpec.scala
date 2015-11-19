@@ -1,5 +1,6 @@
 package arena.types.foundation
 
+import arena.types.foundation.BuySell._
 import org.scalatest._
 
 /**
@@ -19,6 +20,12 @@ class BuySellTestSpec extends FlatSpec with Matchers {
   it should "have a value of BUY" in {
     buy.toString should be("BUY")
   }
+  it should "have a sign of 1" in {
+    buy.sign should be(1)
+  }
+  it should "enum from string should be BUY" in {
+    buy should be(BuySell.withName("BUY"))
+  }
 
   // SELL Enum check
   ("A BuySell SELL") should "match SELL enum" in {
@@ -26,6 +33,12 @@ class BuySellTestSpec extends FlatSpec with Matchers {
   }
   it should "have a value of SELL" in {
     sell.toString should be("SELL")
+  }
+  it should "have a sign of -1" in {
+    sell.sign should be(-1)
+  }
+  it should "enum from string should be SELL" in {
+    sell should be(BuySell.withName("SELL"))
   }
 
   // BuySell check

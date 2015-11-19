@@ -20,6 +20,9 @@ class GenderTestSpec extends FlatSpec with Matchers {
   it should "have a value of MALE" in {
     male.toString should be("MALE")
   }
+  it should "from string be MALE enum" in {
+    male should be(Gender.withName("MALE"))
+  }
 
   // FEMALE Enum check
   ("A Gender FEMALE") should "match FEMALE enum" in {
@@ -27,6 +30,9 @@ class GenderTestSpec extends FlatSpec with Matchers {
   }
   it should "have a value of FEMALE" in {
     female.toString should be("FEMALE")
+  }
+  it should "from string be FEMALE enum" in {
+    female should be(Gender.withName("FEMALE"))
   }
 
   // Gender check
