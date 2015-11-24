@@ -6,8 +6,7 @@ package arena.types.foundation
  */
 object Currency extends Enumeration {
   type Currency = Value
-  val
-  ADP,
+  val ADP,
   AED,
   AFN,
   ALL,

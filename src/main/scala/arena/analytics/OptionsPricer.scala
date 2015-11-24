@@ -10,45 +10,13 @@ object OptionsPricer {
 
   val norm = new Gaussian(0, 1);
 
-  def main(args: Array[String]) {
-
-    val S0 = 100.0
-    val K = 110.0
-    val r = 0.03
-    val sigma = 0.1
-    val T = 0.5
-
-    println()
-    println("S0\tstock price at time 0: " + S0)
-    println("K\tstrike price: " + K)
-    println("r\tcontinuously compounded risk-free rate: " + r)
-    println("sigma\tvolatility of the stock price per year: " + sigma)
-    println("T\ttime to maturity in trading years: " + T)
-
-    println()
-    val c_BS = black_scholes_european_pricer(S0, K, r, sigma, T, true)
-    println("c_BS\tBlack-Scholes European call price: " + c_BS)
-    val p_BS = black_scholes_european_pricer(S0, K, r, sigma, T, false)
-    println("p_BS\tBlack-Scholes European put price: " + p_BS)
-
-    println()
-    val c_BT = binomial_tree_european_pricer(S0, K, r, sigma, T, true)
-    println("c_BT\tBinomial tree European call price: " + c_BT)
-    val p_BT = binomial_tree_european_pricer(S0, K, r, sigma, T, false)
-    println("p_BT\tBinomial tree European put price: " + p_BT)
-
-    println()
-    val c_MC = monte_carlo_european_pricer(S0, K, r, sigma, T, true)
-    println("c_BT\tMonte Carlo European call price: " + c_MC)
-    val p_MC = monte_carlo_european_pricer(S0, K, r, sigma, T, false)
-    println("p_BT\tMonte Carlo European put price: " + p_MC)
-  }
-
   def black_scholes_european_pricer(S0: Double, K: Double, r: Double, sigma: Double, T: Double, is_call: Boolean = true): Double = {
+    val d1val = d1(S0, K, r, sigma, T)
+    val d2val = d2(S0, K, r, sigma, T)
     if (is_call) {
-      S0 * norm.cdf(d1(S0, K, r, sigma, T)) - K * math.exp(-r * T) * norm.cdf(d2(S0, K, r, sigma, T))
+      S0 * norm.cdf(d1val) - K * math.exp(-r * T) * norm.cdf(d2val)
     } else {
-      K * math.exp(-r * T) * norm.cdf(-d2(S0, K, r, sigma, T)) - S0 * norm.cdf(-d1(S0, K, r, sigma, T))
+      K * math.exp(-r * T) * norm.cdf(-d2val) - S0 * norm.cdf(-d1val)
     }
   }
 
@@ -59,6 +27,31 @@ object OptionsPricer {
   def d2(S0: Double, K: Double, r: Double, sigma: Double, T: Double): Double = {
     (math.log(S0 / K) + (r - math.pow(sigma, 2) / 2) * T) / (sigma * math.sqrt(T))
   }
+
+  def delta(S0: Double, K: Double, r: Double, sigma: Double, T: Double, is_call: Boolean = true): Double = {
+    if (sigma == 0 || T == 0) {
+      if (is_call) {
+        if (S0 > K) 1 else 0
+      } else {
+        if (S0 < K) -1 else 0
+      }
+    } else {
+      if (is_call) {
+        norm.cdf(d1(S0, K, r, sigma, T)) - math.exp(-r * T)
+      } else {
+        -norm.cdf(d1(S0, K, r, sigma, T)) - math.exp(-r * T)
+      }
+    }
+  }
+
+  def vega(S0: Double, K: Double, r: Double, sigma: Double, T: Double, is_call: Boolean = true): Double = {
+    if (sigma == 0 || T == 0) {
+      0
+    } else {
+      S0 * math.exp(-r * T) * norm.pdf(d1(S0, K, r, sigma, T)) * math.pow(T, 0.5)
+    }
+  }
+
 
   def binomial_tree_european_pricer(S0: Double, K: Double, r: Double, sigma: Double, T: Double, is_call: Boolean = true, N: Int = 100): Double = {
     val deltaT = T / N
