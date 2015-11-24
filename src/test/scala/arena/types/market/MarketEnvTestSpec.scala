@@ -11,10 +11,10 @@ class MarketEnvTestSpec extends FlatSpec with Matchers {
 
   val tolerance = 0.0002
 
-  val gbp = Currency.withName("GBP")
-  val usd = Currency.withName("USD")
-  val eur = Currency.withName("EUR")
-  val jpy = Currency.withName("JPY")
+  val gbp = Currency.GBP
+  val usd = Currency.USD
+  val eur = Currency.EUR
+  val jpy = Currency.JPY
 
   val rates = FxRate(gbp, usd, 1.57) :: FxRate(eur, usd, 1.31) :: Nil
   val env = SimpleEnv((rates map (r => r.pair -> r)).toMap)

@@ -18,7 +18,7 @@ case class SimpleEnv(rates: Map[(Currency, Currency), FxRate])
     = rates get (c1 -> c2) orElse (rates get (c2 -> c1) map (~_))
 
     def viaUsd = {
-      val usd = Currency.withName("USD")
+      val usd = Currency.USD
       for {
         f2u <- attempt(from, usd)
         u2t <- attempt(usd, to)
