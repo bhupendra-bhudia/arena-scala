@@ -10,29 +10,20 @@ import org.scalatest._
 class MathUtilTestSpec extends FlatSpec with Matchers {
 
   val expected = Array(1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880)
-  var i = 0
+  val args = 0 until 10
 
   // Regular factorial
   ("Vanilla Factorial") should "match expected results" in {
-    for (i <- 0 until 10) {
-      val f = factorial(i)
-      f should be(expected(i))
-    }
+    args.foreach(a => factorial(a) should be(expected(a)))
   }
 
   // BigInt factorial
   ("BigInt Factorial") should "match expected results" in {
-    for (i <- 0 until 10) {
-      val f = factorialBig(i)
-      f should be(expected(i))
-    }
+    args.foreach(a => factorialBig(a) should be(expected(a)))
   }
 
   // Accumulating factorial
   ("Accumulating Factorial") should "match expected results" in {
-    for (i <- 0 until 10) {
-      val f = factorialAcc(i)
-      f should be(expected(i))
-    }
+    args.foreach(a => factorialAcc(a) should be(expected(a)))
   }
 }

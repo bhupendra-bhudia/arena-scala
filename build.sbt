@@ -2,7 +2,8 @@
 lazy val commonSettings = Seq(
   organization := "quedex",
   version := "0.1.0",
-  scalaVersion := "2.11.7"
+  scalaVersion := Common.scalaVersion,
+  crossScalaVersions := Common.crossScalaVersions
 )
 
 lazy val root = (project in file(".")).
