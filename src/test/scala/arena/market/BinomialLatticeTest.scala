@@ -11,6 +11,8 @@ import org.scalatest.{BeforeAndAfter, FunSuite}
   *
   */
 class BinomialLatticeTest extends FunSuite with BeforeAndAfter {
+  val now = LocalDate.now()
+
   test("ConstantBL always returns the same thing") {
     val lattice = new ConstantBL(5)
     assert(lattice(0)(0) === 5)
@@ -22,9 +24,9 @@ class BinomialLatticeTest extends FunSuite with BeforeAndAfter {
 
   test("PassThroughBL always returns the identity") {
     val lattice = new PassThroughBL((date: LocalDate) => (idx: Int) => date)
-    assert(lattice(LocalDate.now())(0) === LocalDate.now())
-    assert(lattice(LocalDate.now())(1) === LocalDate.now())
-    assert(lattice(LocalDate.now())(2) === LocalDate.now())
+    assert(lattice(now)(0) === now)
+    assert(lattice(now)(1) === now)
+    assert(lattice(now)(2) === now)
   }
 
   test("GenerateBL generates the correct lattice") {

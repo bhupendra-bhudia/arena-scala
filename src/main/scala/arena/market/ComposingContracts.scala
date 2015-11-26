@@ -42,7 +42,6 @@ abstract class Obs[A] {
   def <=(that: Obs[A])(implicit n: Ordering[A]): Obs[Boolean] = Lift2((a: A, b: A) => n.lteq(a, b), this, that)
 
   //def &&(that:Obs[Boolean])(implicit n: Boolean[A]):Obs[Boolean] = Lift2Obs((a:Boolean,b:Boolean)=> a.&&(b), this,that)
-
 }
 
 case class Const[A](k: A) extends Obs[A]

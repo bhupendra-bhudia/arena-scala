@@ -11,6 +11,7 @@ import scala.reflect.ClassTag
 package object BinomialLattice {
   type RandomVariable[A] = (Int) => A
 }
+
 package BinomialLattice {
 
 import java.text.DecimalFormat

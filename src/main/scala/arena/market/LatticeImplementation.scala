@@ -13,7 +13,6 @@ import arena.market.ComposingContracts._
   */
 package LatticeImplementation {
 
-
 //Process optimization (declarative) layer
 abstract class PROpt[A] {
 
