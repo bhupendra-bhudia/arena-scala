@@ -7,11 +7,8 @@ import scala.actors.Actor
 import scala.swing._
 
 case class SetUpdating(update: Boolean)
-
 case class AdjustSpeed(deltaMs: Int)
-
 case object Randomize
-
 case object Exit
 
 class GameGrid extends Component with Actor {
@@ -62,7 +59,6 @@ class GameGrid extends Component with Actor {
   }
 
   def randomBoard = EndlessBoard.randomBoard _
-
 }
 
 
