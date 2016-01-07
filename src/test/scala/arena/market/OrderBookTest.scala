@@ -1,6 +1,6 @@
 package arena.market
 
-import arena.types.market.NewOrder
+import arena.market.NewOrder
 
 object OrderBookTest extends App {
   val random = new scala.util.Random

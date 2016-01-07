@@ -2,7 +2,7 @@ package arena.market
 
 import java.util.{Comparator, PriorityQueue}
 
-import arena.types.market._
+import arena.market._
 
 class OrderBook(symbol: String) {
 

@@ -12,7 +12,7 @@ import scala.collection.mutable
  *
  * Translated and updated into Scala by
  *
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         26/11/2015 14:37
  */
 class DirectedGraph[N, V] extends Iterable[N] {

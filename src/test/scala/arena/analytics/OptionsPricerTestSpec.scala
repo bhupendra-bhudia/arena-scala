@@ -4,7 +4,7 @@ import arena.analytics.OptionsPricer._
 import org.scalatest._
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         18/11/2015 16:55
  */
 class OptionsPricerTestSpec extends FlatSpec with Matchers {

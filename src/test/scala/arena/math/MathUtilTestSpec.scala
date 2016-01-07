@@ -4,7 +4,7 @@ import arena.math.MathUtil._
 import org.scalatest._
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         25/11/2015 08:57
  */
 class MathUtilTestSpec extends FlatSpec with Matchers {

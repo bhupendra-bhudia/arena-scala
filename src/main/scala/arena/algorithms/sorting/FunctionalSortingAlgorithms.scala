@@ -1,7 +1,7 @@
 package arena.algorithms.sorting
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         16/11/2015 22:44
  */
 class FunctionalSortingAlgorithms {

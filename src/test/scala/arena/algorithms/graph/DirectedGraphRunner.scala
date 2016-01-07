@@ -1,7 +1,7 @@
 package arena.algorithms.graph
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         26/11/2015 15:36
  */
 object DirectedGraphRunner {

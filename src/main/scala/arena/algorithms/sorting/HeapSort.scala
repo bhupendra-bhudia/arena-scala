@@ -1,7 +1,7 @@
 package arena.algorithms.sorting
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         17/11/2015 14:44
  */
 class HeapSort extends Sortable {

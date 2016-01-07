@@ -5,7 +5,7 @@ import org.scalatest._
 import scala.util.Random
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         18/11/2015 09:49
  */
 class SortingTestSpec extends FlatSpec with Matchers {

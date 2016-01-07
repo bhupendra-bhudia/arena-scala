@@ -3,7 +3,7 @@ package arena.math
 import arena.math.MathUtil._
 
 /**
- * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co.uk>
+ * @author Bhupendra Bhudia <bhupendra.bhudia@quedex.co>
  *         25/11/2015 08:57
  */
 object MathUtilRunner {
