@@ -1,6 +1,6 @@
-package arena.analytics
+package arena.analytics.option
 
-import arena.analytics.OptionsPricer._
+import OptionsPricer._
 import org.scalatest._
 
 /**

@@ -1,9 +1,8 @@
-package arena.market
+package arena.analytics.lattice
 
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-import arena.market.BinomialLattice._
 import arena.market.ComposingContracts._
 
 /** *
@@ -11,7 +10,6 @@ import arena.market.ComposingContracts._
   * @author Shahbaz Chaudhary (shahbazc gmail com)
   *
   */
-package LatticeImplementation {
 
 //Process optimization (declarative) layer
 abstract class PROpt[A] {
@@ -161,6 +159,4 @@ object LatticeImplementation {
       avg/(1.0+ir)
     })
   }
-}
-
 }

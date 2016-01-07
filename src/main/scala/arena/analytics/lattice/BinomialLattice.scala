@@ -1,4 +1,6 @@
-package arena.market
+package arena.analytics.lattice
+
+import arena.analytics.lattice.BinomialLattice.RandomVariable
 
 import scala.collection.mutable.ListBuffer
 import scala.reflect.ClassTag
@@ -11,8 +13,6 @@ import scala.reflect.ClassTag
 package object BinomialLattice {
   type RandomVariable[A] = (Int) => A
 }
-
-package BinomialLattice {
 
 import java.text.DecimalFormat
 import java.time.LocalDate
@@ -171,6 +171,4 @@ class PropagateLeftBL[A: ClassTag](source: BinomialLatticeBounded[A], func: ((A,
   override def apply(i: Int) = if (size() > 1) cache(i) else source(i)
 
   override def size() = if (source.size() > 1) source.size() - 1 else 1
-}
-
 }

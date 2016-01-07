@@ -1,4 +1,4 @@
-package arena.market
+package arena.market.order
 
 abstract class OrderBookRequest
 

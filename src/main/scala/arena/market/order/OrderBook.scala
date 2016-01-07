@@ -1,8 +1,6 @@
-package arena.market
+package arena.market.order
 
 import java.util.{Comparator, PriorityQueue}
-
-import arena.market._
 
 class OrderBook(symbol: String) {
 

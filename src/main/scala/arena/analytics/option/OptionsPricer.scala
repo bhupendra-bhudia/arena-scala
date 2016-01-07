@@ -2,7 +2,7 @@
  * Created by bbhudia on 05/11/2015.
  */
 
-package arena.analytics
+package arena.analytics.option
 
 import breeze.stats.distributions._
 
